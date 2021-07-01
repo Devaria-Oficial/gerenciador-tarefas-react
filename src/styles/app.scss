@@ -32,3 +32,55 @@ body{
 @import './config.scss';
 @import './login.scss';
 @import './header.scss';
+@import './filtros.scss';
+@import './listagem.scss';
+@import './footer.scss';
+
+input, select{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    letter-spacing: 0.01em;
+    color: $primaryColor;
+    min-width: 220px;
+    background-color: transparent;
+    font-family: 'Biennale Regular';
+
+    border-top-width: 0em;
+    border-left-width: 0em;
+    border-right-width: 0em;
+    border-bottom-width: 0.1em;
+    border-color: $mediumGreyColor;
+
+    outline: none;
+
+    cursor: pointer;
+
+    &:focus{
+        border-color: $primaryColor;
+    }
+
+    &::placeholder{ // Chrome, Firefox, Opera Safari 10+
+        color: $mediumGreyColor;
+        opacity: 1;
+    }
+
+    &:-ms-input-placeholder{ //Internet Explore
+        color: $mediumGreyColor;
+    }
+
+    &::-ms-input-placeholder{ // Microsoft Edge
+        color: $mediumGreyColor;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    input, select{
+        border-top-width: 1px;
+        border-left-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-radius: 8px;
+        padding: 5px;
+    }
+}
