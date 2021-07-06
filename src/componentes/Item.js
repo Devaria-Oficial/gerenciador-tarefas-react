@@ -5,8 +5,8 @@ import concluido from '../assets/icones/checked.svg';
 
 export const Item = props => {
 
-    const { tarefa } = props;
-    const {dataConclusao, nome, dataPrevisaoConclusao} = tarefa;
+    const { tarefa, selecionarTarefa } = props;
+    const {dataConclusao, nome, dataPrevistaConclusao} = tarefa;
 
     const getDataTexto = (dtConclusao, dtPrevisaoConclusao) => {
         if(dtConclusao){
@@ -17,13 +17,13 @@ export const Item = props => {
     };
 
     return (
-        <div className={"container-item " + (dataConclusao ? "" : "ativo")}>
+        <div className={"container-item " + (dataConclusao ? "" : "ativo")} onClick={() => dataConclusao ? null : selecionarTarefa(tarefa)}>
             <img
                 src={dataConclusao ? concluido : naoConcluido}
                 alt={dataConclusao ? "tarefa concluída" : "selecione a tarefa"} />
             <div>
                 <p className={dataConclusao? "concluido" : ""}>{nome}</p>
-                <span>{getDataTexto(dataConclusao, dataPrevisaoConclusao)}</span>
+                <span>{getDataTexto(dataConclusao, dataPrevistaConclusao)}</span>
             </div>
         </div>
     );
